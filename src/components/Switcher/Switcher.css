@@ -1,0 +1,16 @@
+.switcher {
+    padding: 20px;
+    border: 1px solid black;
+    max-width: 30px;
+}
+.bg-green {
+    background-color: chartreuse;
+}
+.bg-red {
+    background-color: crimson;
+}
+.round {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
