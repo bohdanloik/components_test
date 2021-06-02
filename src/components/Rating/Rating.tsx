@@ -2,7 +2,8 @@ import React from 'react';
 import { Star } from '../Star/Star';
 
 export type Checked = 0 | 1 | 2 | 3 | 4 | 5 ;
-type RatingPropsType = {
+
+export type RatingPropsType = {
     value: Checked
     setRatingCount: (value: Checked) => void
 }
