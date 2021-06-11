@@ -1,5 +1,3 @@
-import React from 'react';
-
 type AccordionPropsType = {
     title: string
     open: boolean

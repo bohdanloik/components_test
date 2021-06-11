@@ -1,4 +1,3 @@
-import React from 'react';
 import './Switcher.css';
 
 export type SwitcherPropsType = {

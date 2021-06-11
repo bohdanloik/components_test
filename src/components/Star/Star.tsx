@@ -1,4 +1,3 @@
-import React from 'react';
 import { Checked } from '../Rating/Rating';
 import './Star.css';
 type StarPropsType = {
