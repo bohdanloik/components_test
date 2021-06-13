@@ -2,13 +2,14 @@ type AccordionPropsType = {
     title: string
     open: boolean
     setAccordionOn: (on: boolean) => void
+    item: string[]
 }
 
 export function Accordion(props: AccordionPropsType) {
     return (
         <div>
             <AccordionTitle title={props.title} on={() =>{props.setAccordionOn(!props.open)}} />
-            {props.open ? <AccordionBody /> : ''}
+            {props.open ? <AccordionBody  item={props.item}/> : ''}
         </div>
     )
     
@@ -30,16 +31,13 @@ function AccordionTitle(props: AccordionTitlePropsType) {
 }
 
 type AccordionBodyTypeBody ={
-
+    item: string[]
 }
 
 function AccordionBody(props: AccordionBodyTypeBody) {
     return (<div>
         <ul>
-            <li>HELLO</li>
-            <li>WORLD</li>
-            <li>NEW</li>
-            <li>HELLO</li>
+        { props.item.map(i => <li>{i}</li>)}
         </ul>
     </div>)
 }
