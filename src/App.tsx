@@ -14,8 +14,8 @@ function App() {
     <div className="App">
       <Rating value={ratingCount} setRatingCount={setRatingCount}/>
       <Switcher value={switcherOn} setSwitcherOn={setSwitcherOn}/>
-      <Accordion title={'ACCORDION'} open={accordionOn} setAccordionOn={setAccordionOn}/>
-      <Accordion title={'NEW ACCORDION'} open ={accordionOn} setAccordionOn={setAccordionOn}/>
+      <Accordion title={'ACCORDION'} open={accordionOn} setAccordionOn={setAccordionOn} item={['1','2','3','t']}/>
+      <Accordion title={'NEW ACCORDION'} open ={accordionOn} setAccordionOn={setAccordionOn} item={['1','2','3','w']}/>
     </div>
   );
 }
