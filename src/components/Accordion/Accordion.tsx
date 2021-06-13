@@ -5,15 +5,18 @@ type ItemType = {
 type AccordionPropsType = {
     title: string
     open: boolean
-    setAccordionOn: (on: boolean) => void
     item: ItemType[]
     onclick: (value: any) => void
+    on: () => void
 }
 
+export type ActionType = {
+    type: string
+}
 export function Accordion(props: AccordionPropsType) {
     return (
         <div>
-            <AccordionTitle title={props.title} on={() =>{props.setAccordionOn(!props.open)}} />
+            <AccordionTitle title={props.title} on={props.on} />
             {props.open ? <AccordionBody  item={props.item} onclick={props.onclick}/> : ''}
         </div>
     )
