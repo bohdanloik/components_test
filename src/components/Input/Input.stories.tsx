@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { Story, Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
@@ -19,6 +19,13 @@ export const TrackValueOfUncontrolledInput = () => {
     }} /> - {value}
     </div>)
 }   
+
+export const ControlledInput= () => {
+    const [parentValue, setParentValue] = useState('');
+    return <input value={parentValue} onChange={(e) => {setParentValue(e.currentTarget.value)}}/>
+}
+
+
 
 export const ControlledInputWithFixedValue = () => <input value={'Input'} />
 
