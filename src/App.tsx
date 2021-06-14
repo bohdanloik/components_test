@@ -6,11 +6,19 @@ import { Accordion, ActionType } from './components/Accordion/Accordion';
 import { Switcher } from './components/Switcher/Switcher';
 
 
+// const reducer = (state: boolean, action: ActionType) => {
+//   if(action.type === 'COLLAPSED') {
+//     return !state;
+//   }
+//   return state;
+// }
 const reducer = (state: boolean, action: ActionType) => {
-  if(action.type === 'COLLAPSED') {
-    return !state;
+  switch(action.type) {
+    case 'COLLAPSED':
+      return !state;
+    default:
+      return state;
   }
-  return state;
 }
 
 function App() {
