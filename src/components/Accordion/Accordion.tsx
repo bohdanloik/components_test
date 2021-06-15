@@ -1,3 +1,5 @@
+import React from "react";
+
 type ItemType = {
     title: string
     value: any
@@ -13,7 +15,9 @@ type AccordionPropsType = {
 export type ActionType = {
     type: string
 }
-export function Accordion(props: AccordionPropsType) {
+export function AccordionSecret(props: AccordionPropsType) {
+    console.log('ACCORDION');
+    
     return (
         <div>
             <AccordionTitle title={props.title} on={props.on} />
@@ -22,6 +26,8 @@ export function Accordion(props: AccordionPropsType) {
     )
     
 }
+
+export const Accordion = React.memo(AccordionSecret);
 
 type AccordionTitlePropsType = {
     title: string

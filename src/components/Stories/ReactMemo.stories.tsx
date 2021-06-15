@@ -15,7 +15,7 @@ const UserSecret = (props: {user:Array<string>}) => {
 const User = React.memo(UserSecret);
 export const Example1 = () => {
     let [counter, setCounter] = useState(0);
-    let [users, setUsers] = useState(['Igor', 'Marta', 'Bohdan']);
+    let [users, setUsers] = useState(['Igor', 'Marta', 'Bohdan','Volodya']);
 
     const addnewuser = () => {
         let newUser = [...users, 'Victor' + new Date().getTime()];
