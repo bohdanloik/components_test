@@ -24,7 +24,6 @@ const reducer = (state: boolean, action: ActionType) => {
 function App() {
   let [ratingCount, setRatingCount] = useState<Checked>(0);
   let [switcherOn, setSwitcherOn] = useState(true)
-  console.log(switcherOn)
   // let [accordionOn, setAccordionOn] = useState(true)
   let [accordionOn, dispatch] = useReducer(reducer, false);
 

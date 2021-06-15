@@ -1,3 +1,4 @@
+import React from 'react';
 import './Switcher.css';
 
 export type SwitcherPropsType = {
@@ -5,7 +6,8 @@ export type SwitcherPropsType = {
     setSwitcherOn: (value: boolean) => void
 }
 
-export function Switcher(props: SwitcherPropsType) {
+export function SwitcherSecret(props: SwitcherPropsType) {
+    console.log('SWITCHER');
     
     return ( <div onClick ={()=> {
         props.setSwitcherOn(!props.value)
@@ -19,3 +21,5 @@ export function Switcher(props: SwitcherPropsType) {
                 <div className={props.value ? 'round bg-green' : 'round bg-red'}></div>
             </div> )
 }
+
+export const Switcher = React.memo(SwitcherSecret);
