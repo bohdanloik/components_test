@@ -7,17 +7,20 @@ export default{
 
 function generateData() {
     console.log('GENERATE DATA');
-    return 12445859948;
+    return 1;
 }
 
 export const Example = () => {
     console.log('COUNTER');
     // const initValue = useMemo(generateData, []);
     const [counter, setCounter] = useState(generateData);
-
+    // const changer = (state: number) => {
+    //     debugger
+    //     return state +1
+    // }
 
     return <>
-        <button  onClick={() => {setCounter(counter + 1)}}>+</button>
+        <button  onClick={() => {setCounter(state => state +1 )}}>+</button>
         {counter}
 
     </>
