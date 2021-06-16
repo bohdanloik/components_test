@@ -48,11 +48,16 @@ export const ExampleSiteTimeOut = () => {
     
     useEffect(()=> {
 
-        setTimeout(() => {
-        console.log('setTimeOut');
-        document.title = counter.toString();  
-        }, 2000);
-    },[counter])
+        // setTimeout(() => {
+        // console.log('setTimeOut');
+        // document.title = counter.toString();  
+        // }, 2000);
+
+        setInterval(() => {
+            console.log('setInterval');
+            setCounter((state) => state + 1)
+        }, 1000)
+    },[])
 
 
     return <>
