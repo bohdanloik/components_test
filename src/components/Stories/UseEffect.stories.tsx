@@ -56,7 +56,7 @@ export const ExampleSiteTimeOut = () => {
         setInterval(() => {
             console.log('setInterval');
             setCounter((state) => state + 1)
-        }, 1000)
+        }, 10000)
     },[])
 
 
