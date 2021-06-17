@@ -68,3 +68,30 @@ export const ExampleSiteTimeOut = () => {
         
     </>
 }
+
+export const ResetEffectExample = () => {
+    console.log('Component rendered');
+
+
+    const [counter, setCounter] = useState(0)
+    
+
+    useEffect(() => {
+      console.log('useEffect occured' + counter);
+
+      return () => {
+          console.log('Reset Effect');
+          
+      }
+        
+    }, [counter])
+
+    const increase = () => {setCounter(counter +1)};
+
+    return <>
+    
+    <h1>Counter : {counter}</h1>
+    <button onClick={increase}>+</button>
+    
+    </>
+}
