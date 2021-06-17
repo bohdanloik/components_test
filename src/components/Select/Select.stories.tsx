@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SelectExample } from "./Select";
 
 
 export default{
@@ -8,5 +9,7 @@ export default{
 export const SelectExemple = () => {
 
 
-    return 
+    return <>
+    <SelectExample />
+    </>
 }
