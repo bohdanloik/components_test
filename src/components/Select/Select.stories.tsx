@@ -15,17 +15,17 @@ export const SelectExemple = () => {
     </>
 }
 export const SelectWithValue= () => {
-
+    const [value, setValue] = useState('1')
 
     return <>
     <SelectCustomExample 
-    value = {'1'}
+    value = {value}
     items = {[
         {value: '1', title: 'Lviv'},
         {value: '2', title: 'Kyiv'},
         {value: '3', title: 'Lutsk'}
     ]}
-    onChange={action('hello')}
+    onChange={setValue}
     />
     </>
 }

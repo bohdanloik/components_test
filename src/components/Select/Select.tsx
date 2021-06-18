@@ -68,17 +68,16 @@ export const SelectCustomExample = (props: SelectPropsType) => {
     const toggleItem = () =>  setActive(!active)
 
     return <>
-    <select name="" id="">
-        <option value="">Lviv</option>
-        <option value="">Kyiv</option>
-        <option value="">Lutsk</option>
-    </select>
     <div className={styles.select}>
-        <h3 onClick={toggleItem}>{selectedItem && selectedItem.title}</h3>
+        <span className={styles.main} onClick={toggleItem}>{selectedItem && selectedItem.title}</span>
         
         { active && 
         <div className={styles.items}>
-            {props.items.map(i=> <div key={i.value}>{i.title}</div> )}
+            {props.items.map(i=> <div 
+            key={i.value} 
+            onClick={()=>{props.onChange(i.value);
+            toggleItem();
+            }}>{i.title}</div> )}
         </div>}
     </div>
     
