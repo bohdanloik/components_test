@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles, StylesProvider, Theme } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import styles from './Select.module.css';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     selectEmpty: {
       marginTop: theme.spacing(2),
-    },
+    }
   }),
 );
 
@@ -62,9 +63,25 @@ export type SelectPropsType = {
 export const SelectCustomExample = (props: SelectPropsType) => {
     const selectedItem = props.items.find(i => i.value === props.value)
 
+    const [active, setActive] = useState(false);
+
+    const toggleItem = () =>  setActive(!active)
+
     return <>
-    <h3>{selectedItem && selectedItem.title}</h3>
-    {props.items.map(i=> <div key={i.value}>{i.title}</div> )}
+    <select name="" id="">
+        <option value="">Lviv</option>
+        <option value="">Kyiv</option>
+        <option value="">Lutsk</option>
+    </select>
+    <div className={styles.select}>
+        <h3 onClick={toggleItem}>{selectedItem && selectedItem.title}</h3>
+        
+        { active && 
+        <div className={styles.items}>
+            {props.items.map(i=> <div key={i.value}>{i.title}</div> )}
+        </div>}
+    </div>
+    
     
     </>
 }
