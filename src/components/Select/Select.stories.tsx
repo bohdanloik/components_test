@@ -21,6 +21,21 @@ export const SelectWithValue= () => {
     <SelectCustomExample 
     value = {'1'}
     items = {[
+        {value: '1', title: 'Lviv'},
+        {value: '2', title: 'Kyiv'},
+        {value: '3', title: 'Lutsk'}
+    ]}
+    onChange={action('hello')}
+    />
+    </>
+}
+
+export const SelectWithOutValue= () => {
+
+
+    return <>
+    <SelectCustomExample 
+    items = {[
         {value: 1, title: 'Lviv'},
         {value: 2, title: 'Kyiv'},
         {value: 3, title: 'Lutsk'}

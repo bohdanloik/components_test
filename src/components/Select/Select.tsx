@@ -51,20 +51,20 @@ export const SelectExample = () => {
 
 export type ItemPropsType = {
     title: string
-    value: number
+    value: any
 }
 export type SelectPropsType = { 
-    value: any
+    value ?: any
     onChange: (value: any) => void
     items: ItemPropsType[]
 }
 
 export const SelectCustomExample = (props: SelectPropsType) => {
-
+    const selectedItem = props.items.find(i => i.value === props.value)
 
     return <>
-    <div>{}</div>
-    {props.items.map(i=> <div>{i.title}</div> )}
+    <h3>{selectedItem && selectedItem.title}</h3>
+    {props.items.map(i=> <div key={i.value}>{i.title}</div> )}
     
     </>
 }
