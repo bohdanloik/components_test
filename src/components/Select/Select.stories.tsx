@@ -31,16 +31,16 @@ export const SelectWithValue= () => {
 }
 
 export const SelectWithOutValue= () => {
-
-
+    const [value, setValue] = useState(null)
     return <>
     <SelectCustomExample 
+    value = {value}
     items = {[
         {value: 1, title: 'Lviv'},
         {value: 2, title: 'Kyiv'},
         {value: 3, title: 'Lutsk'}
     ]}
-    onChange={action('hello')}
+    onChange={setValue}
     />
     </>
 }
